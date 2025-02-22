@@ -26,6 +26,12 @@ $ docker run --detach \
     grafana/grafana
 ```
 
+### Como conectar una red de otro contenedor a nginx-proxy
+
+```console
+docker network connect other-network nginx-proxy
+```
+
 ### Como usar archivos staticos en nginx-proxy
 
 1- Entrar al volumen `vhost`

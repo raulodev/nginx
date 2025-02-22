@@ -28,38 +28,8 @@ $ docker run --detach \
 
 ### Como conectar una red de otro contenedor a nginx-proxy
 
+Esto es necesario para que el servidor nginx pueda acceder a los contenedores
+
 ```console
 docker network connect other-network nginx-proxy
-```
-
-### Como usar archivos staticos en nginx-proxy
-
-1- Entrar al volumen `vhost`
-
-- Obtener la ruta: `docker volume inspect vhost`
-
-2- Copiar configuracion.
-
-Ejemplo de configuracion para un app django:
-
-```
-location /static/ {
-    alias /home/app/web/staticfiles/;
-    add_header Access-Control-Allow-Origin *;
-}
-```
-
-3- Editar el archivo `makefile` para agregar el volumen donde
-estan guardados los archivos estaticos del servidor web
-
-Agregar esta linea (ejemplo):
-
-```
---volume botonera-tg-pro_static_volume:/home/app/web/staticfiles \
-```
-
-### Como conectar una red usada por otro contenedor a la red de nginx-proxy
-
-```console
-docker network connect other-network nginx-proxy-network
 ```

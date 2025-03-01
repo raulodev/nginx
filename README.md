@@ -33,3 +33,11 @@ Esto es necesario para que el servidor nginx pueda acceder a los contenedores
 ```console
 docker network connect other-network nginx-proxy
 ```
+
+### Otras comandos
+
+Inspeccionar la configuracion generada por nginx-proxy
+
+```console
+docker exec nginx-proxy nginx -T
+```

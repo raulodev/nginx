@@ -34,6 +34,10 @@ Esto es necesario para que el servidor nginx pueda acceder a los contenedores
 docker network connect other-network nginx-proxy
 ```
 
+### Nota
+
+Si al intentar acceder al sitio web usando el dominio asignado se muestra el estado 301 de redireccionamiento intentar eliminar la variable de entorno `LETSENCRYPT_HOST` y vuelve a crear el contenedor
+
 ### Otras comandos
 
 Inspeccionar la configuracion generada por nginx-proxy
